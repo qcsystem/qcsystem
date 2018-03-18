@@ -1,0 +1,20 @@
+{
+  "name": "proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bishoy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "express.js": "^1.0.0",
+    "google-auth-library": "^0.12.0",
+    "googleapis": "^25.0.0",
+    "mysql": "^2.15.0"
+  }
+}

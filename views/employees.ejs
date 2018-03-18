@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>employees</title>
+        
+    </head>
+    <style>
+    .box{
+        margin:30px;
+    }
+    
+
+    </style>
+ <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+  <script>
+ $(document).ready(function() {
+       alert("ready");
+         $(window).ready(function() {$('#loading').hide();});
+        $("#send").submit(function(event){
+            alert("btn clicked");
+        $("#loading").show();
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/getdata",
+            data: $("#send").serialize(),
+           
+            success: function (data) {
+                console.log('data was sent to the server.');
+                console.log(data);
+                $("#loading").hide();
+            },
+            error: function (data) {
+                console.log('There is a problem with your ajax');
+                console.log(data);
+                $("#loading").hide();
+            }
+        });
+
+    });
+    });
+  </script>
+    <body>
+    
+   
+    <img src="/logo1.png" width="100">
+    Adding Employee
+    <form id="send" >
+        <div class="box">
+            <span>num:</span><input type="text" name="num" maxlength="30">
+            </div>
+    <div class="box">
+    <span>Name:</span><input type="text" name="name" maxlength="30">
+    </div>
+     <div class="box">
+    <span>Address:</span><input type="text" name="Address" maxlength="100" >
+    </div>
+    <div class="box">
+    <span>Phone number:</span><input type="text" name="Phone" maxlength="11" >
+    </div>
+    <div class="box">
+    <span>ID number:</span><input type="text" name="ID" maxlength="14" >
+    </div>
+    <div class="box">
+    <span>Hiring date:</span><input type="date" name="Hiring" >
+    </div>
+    <div class="box">
+    <span>Job:</span><input type="text" name="Job" >
+    </div>
+    <div class="box">
+    <span>Educational level:</span><input type="text" name="Educational" >
+    </div>
+    <div class="box">
+    <span>Gender:</span><br>
+    <input type="radio" name="Sex" value="m" checked> Male<br>
+    <input type="radio" name="Sex" value="f"> Female<br>
+    </div>
+    <div class="box">
+    <span>Nationality:</span>
+    <select name="Nationality">
+    <option value="">-- select one --</option>
+    <option value="egyptian">Egyptian</option>
+    <option value="other">Other</option>
+    </select>
+    </div>
+    <div class="box">
+    <span>Martial status:</span><input type="text" name="Martial" >
+    </div>
+    <div class="box">
+    <span>Military status:</span><input type="text" name="Military" >
+    </div>
+    <div class="box">
+    <span>Birth date:</span><input type="date" name="Birth" >
+    </div>
+    <div class="box">
+    <span>Salary:</span><input type="number" name="Salary" >
+    </div>
+    <div class="box">
+    <span>Email:</span><input type="email" name="Email" >
+    </div>
+    <div class="box">
+    <span>Facebook:</span><input type="url" name="Facebook" >
+    </div>
+    <div class="box">
+    <span>ID picture:</span><input type="file" name="id" >
+    </div>
+    <div class="box">
+    <span>Personal picture:</span><input type="file" name="Personal" >
+    </div>
+    <div class="box">
+    <input type="Submit" name="Submit" onClick="send" >
+    </div>     
+    </form>
+    </body>
+</html>
